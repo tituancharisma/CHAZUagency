@@ -8,7 +8,7 @@
 <meta property="og:title" content="CHAZU AGENCY | Web design for service businesses">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--nv:#041C2C;--nv2:#001B2E;--cd:#142C3C;--gold:#FFB810;--g1:#F0B01A;--g2:#C57B1A;--wh:#fff;--mu:#A9B8C6;--lb:#243C54;
 --lt:#F4F4F4;--lc:#fff;--li:#00081A;--lm:#5B6B7C;--lb2:#D4D4DC;--bl:#247FC6;color-scheme:light;
@@ -61,21 +61,52 @@ dialog{border:0;border-radius:24px;padding:0;max-width:680px;width:calc(100% - 2
 .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.cd{transition:none}}
 @media(max-width:860px){#mb{display:block}nav{position:absolute;top:100%;left:0;right:0;background:var(--nv);border-bottom:1px solid rgba(255,255,255,.1);flex-direction:column;align-items:stretch;padding:18px 22px;display:none}nav.o{display:flex}nav .btn{display:none}#sb{display:block}section{padding:64px 0}}
+
+/* ===== Accueil retravaillé : limité au header et à .hero ===== */
+header,.hero{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.hero .btn,header .btn{font-family:Inter,system-ui,sans-serif;font-weight:600}
+.hero.dk{background:radial-gradient(90% 45% at 88% 0%,rgba(30,90,150,.55) 0%,transparent 70%),radial-gradient(70% 40% at 0% 30%,rgba(20,60,105,.35) 0%,transparent 70%),var(--nv)}
+.hero .pill{padding:7px 14px;font-size:.75rem;font-weight:700;letter-spacing:.14em;color:#E6EDF5;background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
+.hero h1{font-size:clamp(1.9rem,5.4vw,3.6rem);font-weight:700;line-height:1.15;margin:20px 0 18px}
+.hero h1 em{color:#FFC629}
+.hero .sub{font-size:1.1rem;font-weight:400;line-height:1.58;margin:0 0 22px}
+@media(min-width:960px){.hero .sub{font-size:1.2rem}}
+.proof{display:grid;gap:8px;margin:0 0 28px;padding:0;list-style:none;font-size:.92rem;font-weight:500;color:#E4ECF3}
+.proof li{display:flex;align-items:center;gap:10px}
+.proof svg{flex:none;width:18px;height:18px;color:#FFC629}
+.hero .btn.g{background:linear-gradient(135deg,#FBC82A,#D48A0C);color:#1A1200;box-shadow:0 10px 28px -10px rgba(245,184,0,.55)}
+.hero .btn.o{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.32)}
+.hero .cta{gap:14px}
+.hero .btn svg{width:18px;height:18px}
+.hero .mc{font-size:.85rem;line-height:1.6}
+.ha{display:none;align-items:center;gap:10px}
+.ic{display:grid;place-items:center;width:46px;height:46px;padding:0;border:1.5px solid rgba(255,255,255,.32);border-radius:14px;background:none;color:#FFC629;cursor:pointer}
+@media(max-width:860px){
+.ha{display:flex}
+#mb{width:46px;height:46px;border-radius:14px;border-color:rgba(255,255,255,.32)}
+.hero{padding:40px 0 64px}
+.hero .cta{display:grid}
+.hero .cta .btn{width:100%;min-height:50px;padding:0 24px}
+}
+/* Barre fixe du bas : visible seulement quand les boutons de l'accueil ne sont plus à l'écran */
+#sb{transform:translateY(110%);visibility:hidden;transition:transform .3s,visibility .3s}
+#sb.on{transform:none;visibility:visible}
+@media(prefers-reduced-motion:reduce){#sb{transition:none}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="lg" viewBox="0 0 600 130"><g transform="translate(0.4,4.8) scale(1.2)" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M42 22 H78 L42 78 H78"/><path d="M42 22 A28 28 0 0 0 42 78"/><circle class="dot" cx="90" cy="50" r="7" stroke="none"/></g><g transform="translate(135,0)" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M81.8 42.5 A35 35 0 1 0 81.8 87.5"/><path d="M120 30 V100 M176 30 V100 M120 65 H176"/><path d="M206 100 L238 30 L270 100 M219 80 H257"/><path d="M300 30 H356 L300 100 H356"/><path d="M386 30 V72 A28 28 0 0 0 442 72 V30"/></g></symbol></defs></svg>
 
 <header><div class="w bar"><a href="#top" aria-label="CHAZU AGENCY home"><svg class="logo" viewBox="0 0 600 130" role="img" aria-label="CHAZU"><use href="#lg"/></svg></a>
-<button id="mb" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button>
+<div class="ha"><button class="ic" data-book aria-label="Book a free call"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.55 3.5a1 1 0 0 1-.25 1z"/></svg></button><button id="mb" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button></div>
 <nav id="nv"><a class="l" href="#services">Services</a><a class="l" href="#portfolio">Portfolio</a><a class="l" href="#process">Our Process</a><a class="l" href="#pricing">Pricing</a><a class="l" href="#about">About</a><button class="btn g" data-book>Book a Free Call</button></nav></div></header>
 
 <main id="top">
 <section class="hero dk"><div class="w"><div><span class="pill">WEB DESIGN FOR SERVICE BUSINESSES</span>
 <h1>Web design for service businesses, <em>built to win you more customers.</em></h1>
 <p class="sub">Landing pages from $299 and websites of up to 10 pages by quote. Designed around the calls and quote requests your business runs on, and 100% yours after final payment.</p>
-<p class="fl">Flat $299 landing page · Five-business-day target · Pay in two parts</p>
-<div class="cta"><button class="btn g" data-book>Book a Free Call →</button><a class="btn o" href="#portfolio">See concept sites</a></div>
+<ul class="proof"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Flat $299 landing page</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Five-business-day target</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Pay in two parts</li></ul>
+<div class="cta"><button class="btn g" data-book>Book a Free Call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a class="btn o" href="#portfolio">See concept sites</a></div>
 <p class="mc">Free 15-minute call on Google Meet. Pick the time that suits you.</p></div>
 <div class="mock" aria-hidden="true"><div class="br"><div class="t"><i></i><i></i><i></i><b>CONCEPT</b></div><div class="b"><div class="ln h"></div><div class="ln"></div><div class="ln s"></div><div class="bt"></div><div class="cx"><i></i><i></i><i></i></div></div></div><div class="ph"><div class="ln"></div><div class="ln s"></div><div class="bt"></div></div></div></div></section>
 
@@ -152,6 +183,7 @@ var em=$("em");em.textContent=C.email;em.href="mailto:"+C.email;
 $("mb").onclick=function(){var o=$("nv").classList.toggle("o");this.setAttribute("aria-expanded",o)};
 $("nv").onclick=function(e){if(e.target.tagName==="A")$("nv").classList.remove("o")};
 try{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});document.querySelectorAll(".rv").forEach(function(n){io.observe(n)})}catch(x){document.querySelectorAll(".rv").forEach(function(n){n.classList.add("in")})}
+try{var hc=document.querySelector(".hero .cta"),sbb=$("sb");if(hc&&sbb){new IntersectionObserver(function(es){sbb.classList.toggle("on",!es[0].isIntersecting)}).observe(hc)}}catch(x){$("sb").classList.add("on")}
 /* booking */
 var TZ="America/Chicago",days=[],sel=null,dIdx=0;
 function off(ms){var o={};new Intl.DateTimeFormat("en-US",{timeZone:TZ,hourCycle:"h23",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}).formatToParts(new Date(ms)).forEach(function(x){o[x.type]=+x.value});return Date.UTC(o.year,o.month-1,o.day,o.hour,o.minute,o.second)-Math.floor(ms/1000)*1000}
